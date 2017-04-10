@@ -6,6 +6,11 @@ var Enemy = function() {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
+
+    // Enemy speed
+
+    // Initial enemy location
+
 };
 
 // Update the enemy's position, required method for game
@@ -14,6 +19,10 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+
+    // Update enemy location = speed * dt
+
+    // Check for collision with player
 };
 
 // Draw the enemy on the screen, required method for game
@@ -24,12 +33,47 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+var Player = function () {
+    // Variables applied to each of our instances go here,
+    // we've provided one for you to get started
 
+    // The image/sprite for our enemies, this uses
+    // a helper we've provided to easily load images
+    this.sprite = 'images/char-boy.png';
+
+    // Player speed
+
+    // Initial player location
+
+}
+
+Player.prototype.update = function(dt) {
+    // You should multiply any movement by the dt parameter
+    // which will ensure the game runs at the same speed for
+    // all computers.
+
+    // Update player location
+
+};
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+/*
+handleInput - should receive user input, allowedKeys (the key which was pressed) and move the player according to that input. In particular:
+
+Left key should move the player to the left, right key to the right, up should move the player up and down should move the player down.
+    Recall that the player cannot move off screen (so you will need to check for that and handle appropriately).
+If the player reaches the water the game should be reset by moving the player back to the initial location (you can write a separate reset Player method to handle that).
+*/
+Player.prototype.handleInput = function (input, allowedKeys) {
+
+    console.log(input + " pressed\n");
+}
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
 
 
 // This listens for key presses and sends the keys to your
